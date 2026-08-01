@@ -1,0 +1,7 @@
+// import {
+//   "qyt1234567/moon-causal" @lib,
+// }
+
+options(
+  "is-main": true,
+)
