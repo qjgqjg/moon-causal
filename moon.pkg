@@ -1,1 +1,3 @@
-// Empty package config
+import {
+  "moonbitlang/core/math"
+}
