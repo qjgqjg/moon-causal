@@ -19,8 +19,8 @@ repository = ""
 
 license = "Apache-2.0"
 
-keywords = []
+keywords = ["causal-inference", "statistics", "math"]
 
 preferred_target = "wasm-gc"
 
-description = ""
+description = "A foundational Causal Inference toolkit for MoonBit, providing composable numerical methods like Propensity Score, IPW, and Doubly Robust Estimation."

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup MoonBit
+        uses: moonbit-community/setup-moonbit@v1
+        with:
+          version: '0.10.3'
+
+      - name: Format Check
+        run: moon fmt --deny-warn
+
+      - name: Info Check (API stability)
+        run: moon info --deny-warn
+
+      - name: Type Check
+        run: moon check
+
+      - name: Test
+        run: moon test
