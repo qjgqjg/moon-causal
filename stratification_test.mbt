@@ -1,3 +1,4 @@
+///|
 test "stratify_by_score" {
   let scores = [0.1, 0.4, 0.6, 0.9]
   let strata = stratify_by_score(scores, 4)

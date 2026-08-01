@@ -19,7 +19,7 @@ repository = ""
 
 license = "Apache-2.0"
 
-keywords = ["causal-inference", "statistics", "math"]
+keywords = [ "causal-inference", "statistics", "math" ]
 
 preferred_target = "wasm-gc"
 

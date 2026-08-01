@@ -5,7 +5,7 @@ pub fn doubly_robust_ate(
   treatments : Array[Bool],
   propensity_scores : Array[Double],
   predicted_outcomes_treated : Array[Double],
-  predicted_outcomes_control : Array[Double]
+  predicted_outcomes_control : Array[Double],
 ) -> Double {
   let n = outcomes.length()
   if n == 0 {
@@ -20,9 +20,9 @@ pub fn doubly_robust_ate(
     let y1 = predicted_outcomes_treated[i]
     let y0 = predicted_outcomes_control[i]
 
-    let term1 = (t * y) / p - ((t - p) / p) * y1
-    let term0 = ((1.0 - t) * y) / (1.0 - p) + ((t - p) / (1.0 - p)) * y0
-    
+    let term1 = t * y / p - (t - p) / p * y1
+    let term0 = (1.0 - t) * y / (1.0 - p) + (t - p) / (1.0 - p) * y0
+
     mu_1_sum += term1
     mu_0_sum += term0
   }

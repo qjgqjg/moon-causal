@@ -1,0 +1,36 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "qyt1234567/moon-causal"
+
+// Values
+pub fn doubly_robust_ate(Array[Double], Array[Bool], Array[Double], Array[Double], Array[Double]) -> Double
+
+pub fn estimate_propensity_scores(Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn ipw_weights_ate(Array[Bool], Array[Double]) -> Array[Double]
+
+pub fn ipw_weights_att(Array[Bool], Array[Double]) -> Array[Double]
+
+pub fn mean(Array[Double]) -> Double
+
+pub fn rosenbaum_bounds_gamma(Double, Double) -> Double
+
+pub fn sigmoid(Double) -> Double
+
+pub fn smd(Array[Double], Array[Bool]) -> Double
+
+pub fn std_dev(Array[Double], sample? : Bool) -> Double
+
+pub fn stratify_by_score(Array[Double], Int) -> Array[Int]
+
+pub fn sum(Array[Double]) -> Double
+
+pub fn variance(Array[Double], sample? : Bool) -> Double
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

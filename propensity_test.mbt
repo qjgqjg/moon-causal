@@ -1,3 +1,4 @@
+///|
 test "sigmoid function" {
   inspect(sigmoid(0.0), content="0.5")
   let s_inf = sigmoid(100.0)
@@ -7,12 +8,9 @@ test "sigmoid function" {
   }
 }
 
+///|
 test "estimate propensity scores" {
-  let covariates = [
-    [1.0, 2.0],
-    [1.0, -1.0],
-    [-1.0, 0.0],
-  ]
+  let covariates = [[1.0, 2.0], [1.0, -1.0], [-1.0, 0.0]]
   let weights = [0.5, -0.5]
   let scores = estimate_propensity_scores(covariates, weights)
   // score 1: z = 0.5 - 1.0 = -0.5 => sigmoid(-0.5)

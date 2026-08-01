@@ -19,7 +19,7 @@ pub fn mean(arr : Array[Double]) -> Double {
 
 ///|
 /// Calculates the variance of an array of doubles.
-pub fn variance(arr : Array[Double], sample~ : Bool = true) -> Double {
+pub fn variance(arr : Array[Double], sample? : Bool = true) -> Double {
   let n = arr.length()
   if n <= 1 {
     return 0.0
@@ -36,7 +36,7 @@ pub fn variance(arr : Array[Double], sample~ : Bool = true) -> Double {
 
 ///|
 /// Calculates the standard deviation of an array of doubles.
-pub fn std_dev(arr : Array[Double], sample~ : Bool = true) -> Double {
+pub fn std_dev(arr : Array[Double], sample? : Bool = true) -> Double {
   let v = variance(arr, sample~)
   v.sqrt()
 }

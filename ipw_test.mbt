@@ -1,3 +1,4 @@
+///|
 test "ipw ate weights" {
   let t = [true, false, true, false]
   let p = [0.8, 0.2, 0.5, 0.5]
@@ -8,6 +9,7 @@ test "ipw ate weights" {
   inspect(weights[3], content="2")
 }
 
+///|
 test "ipw att weights" {
   let t = [true, false, true, false]
   let p = [0.8, 0.2, 0.5, 0.5]

@@ -1,6 +1,9 @@
 ///|
 /// Assigns each observation to a stratum based on uniformly spaced bins of propensity scores.
-pub fn stratify_by_score(propensity_scores : Array[Double], num_strata : Int) -> Array[Int] {
+pub fn stratify_by_score(
+  propensity_scores : Array[Double],
+  num_strata : Int,
+) -> Array[Int] {
   let n = propensity_scores.length()
   if n == 0 || num_strata <= 1 {
     return Array::make(n, 0)

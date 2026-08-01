@@ -1,6 +1,9 @@
 ///|
 /// Calculates Inverse Probability Weights for Average Treatment Effect (ATE).
-pub fn ipw_weights_ate(treatments : Array[Bool], propensity_scores : Array[Double]) -> Array[Double] {
+pub fn ipw_weights_ate(
+  treatments : Array[Bool],
+  propensity_scores : Array[Double],
+) -> Array[Double] {
   let n = treatments.length()
   let weights = Array::new(capacity=n)
   for i in 0..<n {
@@ -17,7 +20,10 @@ pub fn ipw_weights_ate(treatments : Array[Bool], propensity_scores : Array[Doubl
 
 ///|
 /// Calculates Inverse Probability Weights for Average Treatment Effect on the Treated (ATT).
-pub fn ipw_weights_att(treatments : Array[Bool], propensity_scores : Array[Double]) -> Array[Double] {
+pub fn ipw_weights_att(
+  treatments : Array[Bool],
+  propensity_scores : Array[Double],
+) -> Array[Double] {
   let n = treatments.length()
   let weights = Array::new(capacity=n)
   for i in 0..<n {
