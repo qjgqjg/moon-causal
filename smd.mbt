@@ -12,8 +12,8 @@ pub fn smd(covariate : Array[Double], treatments : Array[Bool]) -> Double {
   }
   let mean_t = mean(treated)
   let mean_c = mean(control)
-  let var_t = variance(treated, sample~=true)
-  let var_c = variance(control, sample~=true)
+  let var_t = variance(treated, sample=true)
+  let var_c = variance(control, sample=true)
   let pooled_sd = ((var_t + var_c) / 2.0).sqrt()
   if pooled_sd == 0.0 {
     return 0.0
