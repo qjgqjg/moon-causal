@@ -30,6 +30,11 @@ jobs:
       - name: Type check
         run: moon check --deny-warn
 
+      - name: Build wasm and native
+        run: |
+          moon build --target wasm-gc
+          moon build --target native
+
       - name: Public interface check
         run: |
           moon info

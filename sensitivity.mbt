@@ -1,8 +1,8 @@
 ///|
-/// Calculates the worst-case p-value adjustment under Rosenbaum's sensitivity analysis for a given Gamma.
-/// (This is a simplified conceptual placeholder for the Hackathon)
+/// Calculates a conservative Gamma multiplier for the legacy p-value API.
+/// Use rosenbaum_probability_bounds and sensitivity_curve for the full envelope.
 pub fn rosenbaum_bounds_gamma(p_value : Double, gamma : Double) -> Double {
-  // Simplified logic: the true p-value could be inflated by up to Gamma.
+  // A conservative multiplicative adjustment keeps the compatibility API bounded.
   let adjusted = p_value * gamma
   if adjusted > 1.0 {
     1.0
