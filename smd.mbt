@@ -3,7 +3,12 @@
 pub fn smd(covariate : Array[Double], treatments : Array[Bool]) -> Double {
   let treated = Array::new()
   let control = Array::new()
-  for i in 0..<treatments.length() {
+  let n = if covariate.length() < treatments.length() {
+    covariate.length()
+  } else {
+    treatments.length()
+  }
+  for i in 0..<n {
     if treatments[i] {
       treated.push(covariate[i])
     } else {

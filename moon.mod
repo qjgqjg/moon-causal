@@ -9,13 +9,13 @@
 //   "moonbitlang/x@0.4.6",
 // }
 
-name = "qyt1234567/moon-causal"
+name = "qjgqjg/moon-causal"
 
-version = "0.1.0"
+version = "0.2.0"
 
 readme = "README.mbt.md"
 
-repository = ""
+repository = "https://github.com/qjgqjg/moon-causal"
 
 license = "Apache-2.0"
 
@@ -23,4 +23,4 @@ keywords = [ "causal-inference", "statistics", "math" ]
 
 preferred_target = "wasm-gc"
 
-description = "A foundational Causal Inference toolkit for MoonBit, providing composable numerical methods like Propensity Score, IPW, and Doubly Robust Estimation."
+description = "A practical MoonBit causal-inference toolkit with propensity modeling, weighting, matching, diagnostics, uncertainty, simulation, and reproducible benchmarks."

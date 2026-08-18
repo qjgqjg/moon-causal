@@ -1,7 +1,5 @@
-// import {
-//   "qyt1234567/moon-causal" @lib,
-// }
+import {
+  "qjgqjg/moon-causal" @causal,
+}
 
-options(
-  "is-main": true,
-)
+pkgtype(kind: "executable")

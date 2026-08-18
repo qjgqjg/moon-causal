@@ -1,36 +1,720 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "qyt1234567/moon-causal"
+package "qjgqjg/moon-causal"
 
 // Values
+pub fn absolute_pairwise_difference(Array[Double]) -> Array[Array[Double]]
+
+pub fn accuracy_from_labels(Array[Bool], Array[Bool]) -> Double
+
+pub fn add_ridge(Array[Array[Double]], Double) -> Array[Array[Double]]
+
+pub fn add_treatment_interactions(Array[Array[Double]], Array[Bool]) -> Array[Array[Double]]
+
+pub fn add_vectors(Array[Double], Array[Double]) -> Array[Double]
+
+pub fn aggregate_stratified_effects(Array[StratifiedEffect]) -> Estimate
+
+pub fn analysis_quality_score(ObservationalAnalysis) -> Double
+
+pub fn analysis_summary_vector(ObservationalAnalysis) -> Array[Double]
+
+pub fn append_column(Array[Array[Double]], Array[Double]) -> Array[Array[Double]]
+
+pub fn arm_estimates(Array[Double], Array[Int], Int) -> Array[ArmEstimate]
+
+pub fn arm_levels(Array[Int]) -> Array[Int]
+
+pub fn arm_sample_counts(Array[Int]) -> Array[(Int, Int)]
+
+pub fn auc_score(Array[Double], Array[Bool]) -> Double
+
+pub fn audit_analysis(ObservationalAnalysis) -> AuditReport
+
+pub fn audit_dataset(CausalDataset) -> AuditReport
+
+pub fn audit_estimate(Estimate) -> Array[Bool]
+
+pub fn audit_model(ModelFit) -> Array[Bool]
+
+pub fn audit_passes(AuditReport) -> Bool
+
+pub fn balance_table(Array[Array[Double]], Array[Bool], Array[String], threshold? : Double) -> Array[BalanceMetric]
+
+pub fn balanced_covariate_count(Array[BalanceMetric]) -> Int
+
+pub fn binary_outcome_to_double(Array[Bool]) -> Array[Double]
+
+pub fn binned_counts(Array[Double], Int) -> Array[Int]
+
+pub fn bootstrap_bias(Array[Double], Double) -> Double
+
+pub fn bootstrap_counts(Int, Int, UInt64) -> Array[Array[Int]]
+
+pub fn bootstrap_difference_in_means(Array[Double], Array[Bool], replicates? : Int, seed? : UInt64) -> BootstrapSummary
+
+pub fn bootstrap_ipw_ate(Array[Double], Array[Bool], Array[Double], Int, UInt64) -> BootstrapSummary
+
+pub fn bootstrap_percentile_interval(Array[Double], Double) -> (Double, Double)
+
+pub fn bootstrap_relative_bias(Array[Double], Double) -> Double
+
+pub fn brier_score(Array[Double], Array[Bool]) -> Double
+
+pub fn calibration_error(Array[Double], Array[Bool], Int) -> Double
+
+pub fn center_covariates(Array[Array[Double]]) -> Array[Array[Double]]
+
+pub fn clamp(Double, Double, Double) -> Double
+
+pub fn classification_accuracy(Array[Double], Array[Bool], threshold? : Double) -> Double
+
+pub fn column_values(Array[Array[Double]], Int) -> Array[Double]
+
+pub fn common_support_indices(Array[Double], Double, Double) -> Array[Int]
+
+pub fn common_support_width(Array[Double], Array[Bool]) -> Double
+
+pub fn complete_case_dataset(CausalDataset) -> CausalDataset
+
+pub fn complete_case_indices(Array[Array[Double]]) -> Array[Int]
+
+pub fn conditional_average_treatment_effect(Array[Double], Array[Double]) -> Array[Double]
+
+pub fn correlation(Array[Double], Array[Double]) -> Double
+
+pub fn covariance(Array[Double], Array[Double]) -> Double
+
+pub fn covariance_matrix(Array[Array[Double]], sample? : Bool) -> Array[Array[Double]]
+
+pub fn critical_gamma(Double, Double, Double) -> Double
+
+pub fn cross_validate_outcome_rmse(Array[Array[Double]], Array[Double], Int, UInt64) -> Double
+
+pub fn cross_validate_propensity(Array[Array[Double]], Array[Bool], Int, UInt64) -> Double
+
+pub fn crude_effect_size(Array[Double], Array[Bool]) -> Double
+
+pub fn delete_one_mean(Array[Double]) -> Array[Double]
+
+pub fn difference_in_differences(Array[Double], Array[Bool], Array[Bool]) -> DifferenceInDifferencesResult
+
+pub fn dose_response_curve(Array[Double], Array[Double], Int) -> Array[DoseResponsePoint]
+
+pub fn dose_weighted_mean(Array[Double], Array[Double], Array[Double]) -> Double
+
+pub fn dot(Array[Double], Array[Double]) -> Double
+
 pub fn doubly_robust_ate(Array[Double], Array[Bool], Array[Double], Array[Double], Array[Double]) -> Double
 
+pub fn doubly_robust_from_dataset(ObservationalAnalysis) -> Estimate
+
+pub fn e_value(Double) -> Double
+
+pub fn effect_curve_by_trim(Array[Double], Array[Bool], Array[Double], Array[Double]) -> Array[Estimate]
+
+pub fn effective_sample_size(Array[Double]) -> Double
+
+pub fn empirical_cdf(Array[Double], Array[Double]) -> Array[Double]
+
+pub fn entropy_like_weights(Array[Double], Array[Bool]) -> Array[Double]
+
+pub fn estimate_atc(Array[Double], Array[Bool], Array[Double]) -> Estimate
+
+pub fn estimate_difference_in_means(Array[Double], Array[Bool]) -> Estimate
+
+pub fn estimate_from_strata(Array[Double], Array[Bool], Array[Double], Int) -> Estimate
+
+pub fn estimate_ipw_ate(Array[Double], Array[Bool], Array[Double], stabilized? : Bool) -> Estimate
+
+pub fn estimate_ipw_att(Array[Double], Array[Bool], Array[Double]) -> Estimate
+
+pub fn estimate_matched_ate(Array[Double], Array[MatchPair]) -> Estimate
+
+pub fn estimate_overlap_ate(Array[Double], Array[Bool], Array[Double]) -> Estimate
+
 pub fn estimate_propensity_scores(Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn estimate_quality_flags(Estimate) -> Array[Bool]
+
+pub fn event_study(Array[Double], Array[Bool], Array[Int]) -> Array[EventStudyPoint]
+
+pub fn feature_maxima(Array[Array[Double]]) -> Array[Double]
+
+pub fn feature_means(Array[Array[Double]]) -> Array[Double]
+
+pub fn feature_minima(Array[Array[Double]]) -> Array[Double]
+
+pub fn feature_standard_deviations(Array[Array[Double]]) -> Array[Double]
+
+pub fn finite_array(Array[Double]) -> Bool
+
+pub fn finite_matrix(Array[Array[Double]]) -> Bool
+
+pub fn fit_linear_outcome_model(Array[Array[Double]], Array[Double], ridge? : Double) -> ModelFit
+
+pub fn fit_logistic_regression(Array[Array[Double]], Array[Bool], learning_rate? : Double, max_iterations? : Int, l2? : Double) -> ModelFit
+
+pub fn g_computation_ate(Array[Double], Array[Double]) -> Estimate
+
+pub fn generalized_propensity_scores(Array[Double], Array[Array[Double]]) -> Array[Double]
+
+pub fn group_mean(Array[Double], Array[Bool], Bool) -> Double
+
+pub fn group_standard_error(Array[Double], Array[Bool], Bool) -> Double
+
+pub fn has_variation(Array[Double]) -> Bool
+
+pub fn hazard_ratio_from_curves(Array[SurvivalPoint], Array[SurvivalPoint], Double) -> Double
+
+pub fn identity_matrix(Int) -> Array[Array[Double]]
+
+pub fn impute_non_finite(Array[Array[Double]]) -> (Array[Array[Double]], ImputationSummary)
+
+pub fn influence_function(Array[Double]) -> Array[Double]
+
+pub fn interaction_average_effect(ModelFit, Array[Array[Double]], Int) -> Double
+
+pub fn interaction_features(Array[Array[Double]]) -> Array[Array[Double]]
 
 pub fn ipw_weights_ate(Array[Bool], Array[Double]) -> Array[Double]
 
 pub fn ipw_weights_att(Array[Bool], Array[Double]) -> Array[Double]
 
+pub fn is_finite(Double) -> Bool
+
+pub fn jackknife_influence(Array[Double], Array[Bool]) -> Array[Double]
+
+pub fn kaplan_meier(Array[Double], Array[Bool]) -> Array[SurvivalPoint]
+
+pub fn l1_norm(Array[Double]) -> Double
+
+pub fn l2_norm(Array[Double]) -> Double
+
+pub fn log_loss(Array[Double], Array[Bool]) -> Double
+
+pub fn log_risk_ratio(RiskMeasure) -> Double
+
+pub fn make_design_matrix(Array[Array[Double]], Bool) -> DesignMatrix
+
+pub fn make_folds(Int, Int, UInt64) -> Array[Fold]
+
+pub fn marginal_effects(ModelFit, Array[Array[Double]]) -> Array[Double]
+
+pub fn matching_effects(Array[Double], Array[MatchPair]) -> Array[Double]
+
+pub fn matching_mean_distance(Array[MatchPair]) -> Double
+
+pub fn matrix_inverse(Array[Array[Double]]) -> Array[Array[Double]]
+
+pub fn matrix_multiply(Array[Array[Double]], Array[Array[Double]]) -> Array[Array[Double]]
+
+pub fn matrix_transpose(Array[Array[Double]]) -> Array[Array[Double]]
+
+pub fn matrix_vector_multiply(Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn matrix_zeros(Int, Int) -> Array[Array[Double]]
+
+pub fn maximum_absolute_smd(Array[BalanceMetric]) -> Double
+
 pub fn mean(Array[Double]) -> Double
+
+pub fn mean_absolute_error(Array[Double], Array[Double]) -> Double
+
+pub fn mean_absolute_error_raw(Array[Double], Array[Double]) -> Double
+
+pub fn mean_impute_vector(Array[Double]) -> Array[Double]
+
+pub fn mean_or(Array[Double], Double) -> Double
+
+pub fn median(Array[Double]) -> Double
+
+pub fn median_absolute_deviation(Array[Double]) -> Double
+
+pub fn mediation_balance_check(MediationResult, Double) -> Bool
+
+pub fn mediation_decomposition(Array[Double], Array[Double], Array[Double], Array[Double]) -> MediationResult
+
+pub fn mediation_sensitivity(MediationResult, Double) -> MediationResult
+
+pub fn missingness_indicator(Array[Array[Double]]) -> Array[Array[Double]]
+
+pub fn missingness_rate(Array[Array[Double]]) -> Double
+
+pub fn model_predict(ModelFit, Array[Double]) -> Double
+
+pub fn model_quality_flags(ModelFit) -> Array[Bool]
+
+pub fn nearest_neighbor_match(Array[Array[Double]], Array[Bool], caliper? : Double, replace? : Bool) -> Array[MatchPair]
+
+pub fn normalized_weights(Array[Double]) -> Array[Double]
+
+pub fn odds_from_probability(Double) -> Double
+
+pub fn outlier_indices(Array[Double], Double) -> Array[Int]
+
+pub fn overlap_fraction(Array[Double], Array[Bool]) -> Double
+
+pub fn overlap_population_weights(Array[Double]) -> Array[Double]
+
+pub fn overlap_report(Array[Double], Array[Bool]) -> OverlapReport
+
+pub fn overlap_weights(Array[Bool], Array[Double]) -> Array[Double]
+
+pub fn pairwise_arm_difference(Array[Double], Array[Int], Int, Int) -> Estimate
+
+pub fn pairwise_difference(Array[Double]) -> Array[Array[Double]]
+
+pub fn permutation_p_value(Array[Double], Array[Bool], permutations? : Int, seed? : UInt64) -> Double
+
+pub fn policy_treatment_rate(Array[Double], Double) -> Double
+
+pub fn policy_value(Array[Double], Array[Bool], Array[Double]) -> Double
+
+pub fn polynomial_design(Array[Array[Double]], Int) -> DesignMatrix
+
+pub fn polynomial_features(Array[Array[Double]], Int) -> Array[Array[Double]]
+
+pub fn positivity_violations(Array[Double], Double) -> Int
+
+pub fn predict_outcomes(ModelFit, Array[Array[Double]]) -> Array[Double]
+
+pub fn predict_propensity(ModelFit, Array[Array[Double]]) -> Array[Double]
+
+pub fn pretrend_difference(Array[Double], Array[Bool], Array[Int]) -> Double
+
+pub fn probability_from_odds(Double) -> Double
+
+pub fn propensity_calibration(Array[Double], Array[Bool], Int) -> Array[Double]
+
+pub fn propensity_histogram(Array[Double], Int) -> Array[Int]
+
+pub fn quantile(Array[Double], Double) -> Double
+
+pub fn quantile_subgroup_effects(Array[Double], Array[Double], Array[Bool], Int) -> Array[SubgroupEffect]
+
+pub fn r_squared(Array[Double], Array[Double]) -> Double
+
+pub fn rank_transform(Array[Double]) -> Array[Double]
+
+pub fn relative_risk_reduction(RiskMeasure) -> Double
+
+pub fn resample_by_weights(Array[Double], Array[Double], Int, UInt64) -> Array[Double]
+
+pub fn residuals(ModelFit, Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn restricted_mean_survival(Array[SurvivalPoint], Double) -> Double
+
+pub fn risk_measure(Array[Bool], Array[Bool]) -> RiskMeasure
+
+pub fn robust_z_scores(Array[Double]) -> Array[Double]
+
+pub fn root_mean_squared_error(Array[Double], Array[Double]) -> Double
+
+pub fn root_mean_squared_error_raw(Array[Double], Array[Double]) -> Double
 
 pub fn rosenbaum_bounds_gamma(Double, Double) -> Double
 
+pub fn rosenbaum_probability_bounds(Double, Double) -> RosenbaumBounds
+
+pub fn rowwise_linear_predict(Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn run_observational_analysis(CausalDataset) -> ObservationalAnalysis
+
+pub fn run_synthetic_benchmark(SyntheticConfig) -> BenchmarkReport
+
+pub fn safe_logit(Double) -> Double
+
+pub fn safe_probability(Double, epsilon? : Double) -> Double
+
+pub fn same_length(Array[Double], Array[Double]) -> Bool
+
+pub fn same_length_bool(Array[Bool], Array[Double]) -> Bool
+
+pub fn sample_variance(Array[Double], Array[Double]) -> Double
+
+pub fn scale_covariates(Array[Array[Double]]) -> Array[Array[Double]]
+
+pub fn scale_vector(Array[Double], Double) -> Array[Double]
+
+pub fn sensitivity_curve(Double, Double, Int) -> Array[RosenbaumBounds]
+
+pub fn shuffled_indices(Int, UInt64) -> Array[Int]
+
 pub fn sigmoid(Double) -> Double
+
+pub fn simulate_observational_data(SyntheticConfig) -> SyntheticData
 
 pub fn smd(Array[Double], Array[Bool]) -> Double
 
+pub fn smd_profile(Array[Array[Double]], Array[Bool], Array[String], Double) -> SmdProfile
+
+pub fn solve_linear_system(Array[Array[Double]], Array[Double]) -> Array[Double]
+
+pub fn stabilized_ipw_weights(Array[Bool], Array[Double]) -> Array[Double]
+
+pub fn standardize(Array[Double]) -> Array[Double]
+
+pub fn standardized_effect_size(Double, Array[Double]) -> Double
+
+pub fn standardized_mean_difference_from_groups(Array[Double], Array[Double]) -> Double
+
+pub fn standardized_residuals(Array[Double], Array[Double]) -> Array[Double]
+
 pub fn std_dev(Array[Double], sample? : Bool) -> Double
+
+pub fn stratified_effects(Array[Double], Array[Bool], Array[Int]) -> Array[StratifiedEffect]
 
 pub fn stratify_by_score(Array[Double], Int) -> Array[Int]
 
+pub fn stratum_counts(Array[Int], Int) -> Array[Int]
+
+pub fn subtract_vectors(Array[Double], Array[Double]) -> Array[Double]
+
 pub fn sum(Array[Double]) -> Double
 
+pub fn summarize_covariates(Array[Array[Double]]) -> DatasetSummary
+
+pub fn survival_at(Array[SurvivalPoint], Double) -> Double
+
+pub fn synthetic_control_weights(Array[Double], Array[Array[Double]]) -> Array[Double]
+
+pub fn systematic_sample(Int, Int, UInt64) -> Array[Int]
+
+pub fn threshold_outcome(Array[Double], Double) -> Array[Bool]
+
+pub fn threshold_subgroup_effects(Array[Double], Array[Double], Array[Bool], Double) -> Array[SubgroupEffect]
+
+pub fn train_validation_split(CausalDataset, Double, UInt64) -> DataSplit
+
+pub fn treatment_effect_by_threshold(Array[Double], Array[Double], Array[Bool], Array[Double]) -> Array[SubgroupEffect]
+
+pub fn treatment_outcome_covariance(Array[Double], Array[Bool]) -> Double
+
+pub fn treatment_t_statistic(Double, Double) -> Double
+
+pub fn trim_propensity_scores(Array[Double], lower? : Double, upper? : Double) -> Array[Double]
+
+pub fn trimmed_mean(Array[Double], Double) -> Double
+
+pub fn truncate_weights(Array[Double], Double) -> Array[Double]
+
+pub fn uplift_auc(Array[Double], Array[Bool], Array[Double]) -> Double
+
+pub fn uplift_curve(Array[Double], Array[Bool], Array[Double], Int) -> Array[Double]
+
 pub fn variance(Array[Double], sample? : Bool) -> Double
+
+pub fn weight_design_effect(Array[Double]) -> Double
+
+pub fn weighted_arm_means(Array[Double], Array[Int], Array[Double]) -> Array[ArmEstimate]
+
+pub fn weighted_covariance_matrix(Array[Array[Double]], Array[Double]) -> Array[Array[Double]]
+
+pub fn weighted_donor_outcome(Array[Double], Array[Double]) -> Double
+
+pub fn weighted_mean(Array[Double], Array[Double]) -> Double
+
+pub fn weighted_potential_mean(Array[Double], Array[Bool], Array[Double], Bool) -> Double
+
+pub fn weighted_quantile(Array[Double], Array[Double], Double) -> Double
+
+pub fn weighted_smd(Array[Double], Array[Bool], Array[Double]) -> Double
+
+pub fn weighted_treatment_effect(Array[Double], Array[Bool], Array[Double]) -> Double
+
+pub fn weighted_variance(Array[Double], Array[Double]) -> Double
+
+pub fn winsorize(Array[Double], Double, Double) -> Array[Double]
+
+pub fn winsorized_mean(Array[Double], Double) -> Double
 
 // Errors
 
 // Types and methods
+pub struct ArmEstimate {
+  arm : Int
+  count : Int
+  mean_outcome : Double
+  standard_error : Double
+  difference_from_reference : Double
+}
+
+pub struct AuditReport {
+  valid_dataset : Bool
+  adequate_sample : Bool
+  has_treatment_variation : Bool
+  has_outcome_variation : Bool
+  propensity_overlap : Bool
+  no_positivity_violation : Bool
+  quality_score : Double
+}
+
+pub struct BalanceMetric {
+  name : String
+  treated_mean : Double
+  control_mean : Double
+  standardized_difference : Double
+  variance_ratio : Double
+  absolute_difference : Double
+  balanced : Bool
+}
+
+pub struct BenchmarkReport {
+  sample_size : Int
+  true_ate : Double
+  estimated_ate : Double
+  absolute_error : Double
+  standard_error : Double
+  effective_sample_size : Double
+  propensity_auc : Double
+}
+pub fn BenchmarkReport::absolute_error(Self) -> Double
+pub fn BenchmarkReport::effective_sample_size(Self) -> Double
+pub fn BenchmarkReport::estimated_ate(Self) -> Double
+pub fn BenchmarkReport::propensity_auc(Self) -> Double
+pub fn BenchmarkReport::sample_size(Self) -> Int
+pub fn BenchmarkReport::standard_error(Self) -> Double
+pub fn BenchmarkReport::true_ate(Self) -> Double
+
+pub struct BootstrapSummary {
+  point_estimate : Double
+  standard_error : Double
+  lower : Double
+  upper : Double
+  replicates : Int
+  successful_replicates : Int
+}
+
+pub struct CausalDataset {
+  covariates : Array[Array[Double]]
+  treatment : Array[Bool]
+  outcome : Array[Double]
+  feature_names : Array[String]
+}
+pub fn CausalDataset::column(Self, Int) -> Array[Double]
+pub fn CausalDataset::control_count(Self) -> Int
+pub fn CausalDataset::filter_by_score(Self, Array[Double], Double, Double) -> Self
+pub fn CausalDataset::is_valid(Self) -> Bool
+pub fn CausalDataset::n(Self) -> Int
+pub fn CausalDataset::new(Array[Array[Double]], Array[Bool], Array[Double]) -> Self
+pub fn CausalDataset::outcome_mean(Self, Bool) -> Double
+pub fn CausalDataset::outcome_range(Self) -> (Double, Double)
+pub fn CausalDataset::p(Self) -> Int
+pub fn CausalDataset::select(Self, Array[Int]) -> Self
+pub fn CausalDataset::treated_count(Self) -> Int
+pub fn CausalDataset::treatment_rate(Self) -> Double
+pub fn CausalDataset::validate_alignment(Self) -> Bool
+pub fn CausalDataset::with_feature_names(Self, Array[String]) -> Self
+pub fn CausalDataset::with_outcome(Self, Array[Double]) -> Self
+
+pub struct CausalGraph {
+  nodes : Array[String]
+  edges : Array[GraphEdge]
+}
+pub fn CausalGraph::add_edge(Self, String, String) -> Self
+pub fn CausalGraph::ancestors(Self, String) -> Array[String]
+pub fn CausalGraph::backdoor_candidates(Self, String, String) -> Array[String]
+pub fn CausalGraph::children(Self, String) -> Array[String]
+pub fn CausalGraph::edge_count(Self) -> Int
+pub fn CausalGraph::has_edge(Self, String, String) -> Bool
+pub fn CausalGraph::new(Array[String]) -> Self
+pub fn CausalGraph::parents(Self, String) -> Array[String]
+pub fn CausalGraph::topological_order(Self) -> Array[String]
+
+pub struct DataSplit {
+  training : CausalDataset
+  validation : CausalDataset
+}
+
+pub struct DatasetSummary {
+  columns : Int
+  rows : Int
+  means : Array[Double]
+  standard_deviations : Array[Double]
+  minima : Array[Double]
+  maxima : Array[Double]
+}
+
+pub struct DesignMatrix {
+  values : Array[Array[Double]]
+  column_names : Array[String]
+}
+
+pub struct DifferenceInDifferencesResult {
+  treated_pre_mean : Double
+  treated_post_mean : Double
+  control_pre_mean : Double
+  control_post_mean : Double
+  treatment_change : Double
+  control_change : Double
+  estimate : Double
+  standard_error : Double
+}
+
+pub struct DoseResponsePoint {
+  dose : Double
+  count : Int
+  mean_outcome : Double
+  standard_error : Double
+}
+
+pub struct Estimate {
+  estimate : Double
+  standard_error : Double
+  lower : Double
+  upper : Double
+  sample_size : Int
+  effective_sample_size : Double
+  estimand : String
+}
+pub fn Estimate::as_vector(Self) -> Array[Double]
+pub fn Estimate::from_standard_error(Double, Double, Int, Double, String) -> Self
+pub fn Estimate::is_statistically_significant(Self, alpha? : Double) -> Bool
+pub fn Estimate::relative_precision(Self) -> Double
+
+pub struct EventStudyPoint {
+  relative_time : Int
+  treated_mean : Double
+  control_mean : Double
+  effect : Double
+  count : Int
+}
+
+pub struct Fold {
+  training_indices : Array[Int]
+  validation_indices : Array[Int]
+}
+
+pub struct GraphEdge {
+  source : String
+  target : String
+}
+
+pub struct ImputationSummary {
+  imputed_values : Int
+  columns : Int
+  rows : Int
+  column_means : Array[Double]
+}
+
+pub struct MatchPair {
+  treated_index : Int
+  control_index : Int
+  distance : Double
+  weight : Double
+}
+
+pub struct MediationResult {
+  total_effect : Double
+  direct_effect : Double
+  indirect_effect : Double
+  mediated_fraction : Double
+}
+
+pub struct ModelFit {
+  coefficients : Array[Double]
+  intercept : Double
+  iterations : Int
+  converged : Bool
+  loss : Double
+  feature_means : Array[Double]
+  feature_scales : Array[Double]
+}
+pub fn ModelFit::coefficient_l2(Self) -> Double
+pub fn ModelFit::has_converged(Self) -> Bool
+
+pub struct ObservationalAnalysis {
+  dataset : CausalDataset
+  propensity_model : ModelFit
+  propensity_scores : Array[Double]
+  ipw_estimate : Estimate
+  balance : Array[BalanceMetric]
+  overlap : OverlapReport
+}
+pub fn ObservationalAnalysis::quality_score(Self) -> Double
+
+pub struct OverlapReport {
+  minimum : Double
+  maximum : Double
+  treated_minimum : Double
+  treated_maximum : Double
+  control_minimum : Double
+  control_maximum : Double
+  common_support_lower : Double
+  common_support_upper : Double
+  overlap_fraction : Double
+}
+
+pub struct RandomState {
+  mut state : UInt64
+}
+pub fn RandomState::new(UInt64) -> Self
+pub fn RandomState::next_u64(Self) -> UInt64
+pub fn RandomState::normal(Self) -> Double
+pub fn RandomState::uniform(Self) -> Double
+
+pub struct RiskMeasure {
+  treated_risk : Double
+  control_risk : Double
+  risk_difference : Double
+  risk_ratio : Double
+  odds_ratio : Double
+  number_needed_to_treat : Double
+}
+
+pub struct RosenbaumBounds {
+  gamma : Double
+  lower_probability : Double
+  upper_probability : Double
+  amplification : Double
+}
+
+pub struct SmdProfile {
+  before : Array[BalanceMetric]
+  maximum_before : Double
+  balanced_before : Int
+}
+
+pub struct StratifiedEffect {
+  stratum : Int
+  count : Int
+  treated_count : Int
+  control_count : Int
+  estimate : Double
+  standard_error : Double
+}
+
+pub struct SubgroupEffect {
+  name : String
+  sample_size : Int
+  treated_count : Int
+  control_count : Int
+  estimate : Double
+  standard_error : Double
+}
+
+pub struct SurvivalPoint {
+  time : Double
+  at_risk : Int
+  events : Int
+  survival : Double
+  standard_error : Double
+}
+
+pub struct SyntheticConfig {
+  sample_size : Int
+  covariate_count : Int
+  treatment_effect : Double
+  seed : UInt64
+}
+pub fn SyntheticConfig::new(Int, Int, Double, UInt64) -> Self
+
+pub struct SyntheticData {
+  dataset : CausalDataset
+  true_ate : Double
+  true_propensity : Array[Double]
+}
 
 // Type aliases
 
 // Traits
-

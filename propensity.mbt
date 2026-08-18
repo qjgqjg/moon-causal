@@ -1,7 +1,12 @@
 ///|
 /// Applies the logistic sigmoid function to a value.
 pub fn sigmoid(x : Double) -> Double {
-  1.0 / (1.0 + @math.exp(-x))
+  if x >= 0.0 {
+    1.0 / (1.0 + @math.exp(-x))
+  } else {
+    let exponential = @math.exp(x)
+    exponential / (1.0 + exponential)
+  }
 }
 
 ///|
@@ -21,7 +26,7 @@ pub fn estimate_propensity_scores(
         z += row[j] * weights[j]
       }
     }
-    scores.push(sigmoid(z))
+    scores.push(safe_probability(sigmoid(z)))
   }
   scores
 }

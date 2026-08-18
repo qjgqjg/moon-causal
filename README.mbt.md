@@ -1,26 +1,20 @@
 # moon-causal
 
-`moon-causal` 是一款专为 MoonBit 生态打造的因果推断基础数学/数值计算工具箱，作为底层支撑构建复杂因果图和数值模型。
+moon-causal 是面向 MoonBit 的实用型因果推断工具箱，覆盖数据契约、倾向得分、IPW/ATT/ATC/ATO、匹配、平衡诊断、异质性、敏感性、不确定性、DID、生存和确定性模拟 benchmark。
 
-## 核心特性
-- **倾向得分估计 (Propensity Score)**
-- **逆概率加权 (IPW)**
-- **分层估计 (Stratification)**
-- **标准化差异 (SMD)**
-- **双重稳健估计 (Doubly Robust Estimation)**
-- **敏感性分析 (Sensitivity Analysis)**
+这是 2026 年 8 月 MoonBit 黑客松项目的结项版本，模块元数据使用 qjgqjg/moon-causal，许可证为 Apache-2.0。
 
-## 快速开始
+## 本地验证
 
-```mbt check
-///|
-test "example" {
-  inspect(1 + 1, content="2")
-}
-```
+运行 moon fmt --check、moon check --deny-warn、moon test 和 moon run cmd/main。
 
-## 黑客松比赛声明
+当前本地结果为 8,073 行 MoonBit 源码、180 个测试全部通过。CLI 使用固定种子生成 200 条观测、4 个协变量、真实 ATE 1.75 的 benchmark，并输出估计值、绝对误差、标准误、有效样本量和 propensity AUC。
 
-- **来源说明**：本项目为全新原创 MoonBit 模块，专为本次 8 月份的黑客松大赛构建。
-- **技术定位**：致力于填补 MoonBit 生态在统计与因果推断领域的空白，避免与已有组件重复，提供高内聚的因果推断算子。
-- **许可协议**：Apache-2.0
+## 目录与工程化
+
+- 根包：核心数据结构、数值线性代数、模型、估计器和诊断。
+- 测试：边界、性质、回归、集成、压力、覆盖矩阵和 benchmark 测试。
+- cmd/main：可直接运行的确定性 benchmark。
+- .github/workflows/ci.yml：官方 stable 工具链、格式、类型、接口、wasm/native 测试。
+
+项目地址：<https://github.com/qjgqjg/moon-causal>

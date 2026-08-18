@@ -16,7 +16,7 @@ pub fn doubly_robust_ate(
   for i in 0..<n {
     let y = outcomes[i]
     let t = if treatments[i] { 1.0 } else { 0.0 }
-    let p = propensity_scores[i]
+    let p = safe_probability(propensity_scores[i])
     let y1 = predicted_outcomes_treated[i]
     let y0 = predicted_outcomes_control[i]
 

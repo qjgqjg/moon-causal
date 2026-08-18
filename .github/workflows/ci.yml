@@ -6,26 +6,40 @@ on:
       - main
       - master
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  build_and_test:
+  check:
+    name: MoonBit stable checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup MoonBit
-        uses: moonbit-community/setup-moonbit@v1
-        with:
-          version: '0.10.3'
+      - name: Install latest MoonBit stable
+        shell: bash
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+          moon version --all
 
-      - name: Format Check
-        run: moon fmt --deny-warn
+      - name: Format check
+        run: moon fmt --check
 
-      - name: Info Check (API stability)
-        run: moon info --deny-warn
+      - name: Type check
+        run: moon check --deny-warn
 
-      - name: Type Check
-        run: moon check
+      - name: Public interface check
+        run: |
+          moon info
+          git diff --exit-code
 
-      - name: Test
-        run: moon test
+      - name: Wasm GC tests and coverage
+        run: |
+          moon test --target wasm-gc --deny-warn --enable-coverage
+          moon coverage report -f summary
+
+      - name: Native check and tests
+        run: |
+          moon check --target native --deny-warn
+          moon test --target native --deny-warn

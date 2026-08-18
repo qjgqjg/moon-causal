@@ -4,11 +4,15 @@ pub fn ipw_weights_ate(
   treatments : Array[Bool],
   propensity_scores : Array[Double],
 ) -> Array[Double] {
-  let n = treatments.length()
+  let n = if treatments.length() < propensity_scores.length() {
+    treatments.length()
+  } else {
+    propensity_scores.length()
+  }
   let weights = Array::new(capacity=n)
   for i in 0..<n {
     let t = treatments[i]
-    let p = propensity_scores[i]
+    let p = safe_probability(propensity_scores[i])
     if t {
       weights.push(1.0 / p)
     } else {
@@ -24,11 +28,15 @@ pub fn ipw_weights_att(
   treatments : Array[Bool],
   propensity_scores : Array[Double],
 ) -> Array[Double] {
-  let n = treatments.length()
+  let n = if treatments.length() < propensity_scores.length() {
+    treatments.length()
+  } else {
+    propensity_scores.length()
+  }
   let weights = Array::new(capacity=n)
   for i in 0..<n {
     let t = treatments[i]
-    let p = propensity_scores[i]
+    let p = safe_probability(propensity_scores[i])
     if t {
       weights.push(1.0)
     } else {
